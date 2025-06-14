@@ -59,7 +59,7 @@ function App() {
                   <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
                     AI Health Assistant
                   </span>
-                  <span className="text-xs text-gray-500 font-medium tracking-wide">
+                  <span className="hidden sm:block text-xs text-gray-500 font-medium tracking-wide">
                     Your Trusted Health Companion
                   </span>
                 </div>
