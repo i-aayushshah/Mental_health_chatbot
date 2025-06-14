@@ -497,7 +497,9 @@ function HomePage({ setCurrentPage }) {
         </div>
       </div>
 
-      <div className="py-32 bg-gradient-to-b from-gray-50 via-slate-50 to-white relative overflow-hidden">
+     {/* Research Project Overview Section */}
+
+    <div className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-50 via-slate-50 to-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -507,32 +509,33 @@ function HomePage({ setCurrentPage }) {
       </div>
 
       {/* Floating Background Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-indigo-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-br from-indigo-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-white/80 backdrop-blur-xl rounded-[2rem] lg:rounded-[3rem] p-8 sm:p-12 lg:p-20 border border-gray-200/50 shadow-2xl hover:shadow-3xl transition-all duration-700 relative overflow-hidden">
+        <div className="bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-[3rem] p-4 sm:p-8 lg:p-20 border border-gray-200/50 shadow-2xl hover:shadow-3xl transition-all duration-700 relative overflow-hidden">
 
           {/* Decorative Top Border */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500"></div>
 
           {/* Subtle Inner Glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 rounded-[2rem] lg:rounded-[3rem]"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 rounded-xl sm:rounded-2xl lg:rounded-[3rem]"></div>
 
           <div className="relative z-10">
             {/* Header Section */}
-            <div className="text-center mb-20">
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full text-blue-800 font-semibold text-sm uppercase tracking-wider mb-8 shadow-lg border border-blue-200/50">
-                <Microscope className="w-5 h-5 mr-2" />
-                Research Project Overview
+            <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+              <div className="inline-flex items-center px-3 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full text-blue-800 font-semibold text-xs sm:text-sm uppercase tracking-wider mb-6 sm:mb-8 shadow-lg border border-blue-200/50">
+                <Microscope className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                <span className="hidden xs:inline">Research Project Overview</span>
+                <span className="xs:hidden">Research Overview</span>
               </div>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight px-2">
                 About This
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent"> Research Project</span>
               </h2>
 
-              <p className="text-xl lg:text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">
+              <p className="text-base sm:text-xl lg:text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light px-4">
                 Pioneering the development of AI systems that can provide both
                 <span className="font-semibold text-gray-800"> empathetic mental health support</span> and
                 <span className="font-semibold text-gray-800"> accurate medical information</span> to address global healthcare challenges.
@@ -540,19 +543,19 @@ function HomePage({ setCurrentPage }) {
             </div>
 
             {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
 
               {/* Research Objective & Safety */}
-              <div className="space-y-10">
+              <div className="space-y-6 sm:space-y-8 lg:space-y-10">
                 <div className="group">
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                    <div className="flex items-center mb-6">
-                      <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <Brain className="w-8 h-8 text-white" />
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-blue-100/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                    <div className="flex items-center mb-4 sm:mb-6">
+                      <div className="p-2 sm:p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg sm:rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <Brain className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 ml-4">Research Objective</h3>
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 ml-3 sm:ml-4">Research Objective</h3>
                     </div>
-                    <p className="text-gray-700 leading-relaxed text-lg">
+                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg">
                       This research addresses the global shortage of mental health professionals and the rise of
                       online medical misinformation by developing an AI chatbot capable of providing both empathetic
                       mental health support and accurate medical information through advanced natural language processing.
@@ -561,14 +564,14 @@ function HomePage({ setCurrentPage }) {
                 </div>
 
                 <div className="group">
-                  <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-8 border border-emerald-100/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                    <div className="flex items-center mb-6">
-                      <div className="p-3 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <Shield className="w-8 h-8 text-white" />
+                  <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-emerald-100/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                    <div className="flex items-center mb-4 sm:mb-6">
+                      <div className="p-2 sm:p-3 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg sm:rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <Shield className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 ml-4">Safety & Ethics</h3>
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 ml-3 sm:ml-4">Safety & Ethics</h3>
                     </div>
-                    <p className="text-gray-700 leading-relaxed text-lg">
+                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg">
                       Our implementation prioritizes user safety through comprehensive ethical guidelines,
                       crisis intervention protocols, and clear limitations disclosure. The system is designed
                       to complement, not replace, professional healthcare services.
@@ -578,17 +581,17 @@ function HomePage({ setCurrentPage }) {
               </div>
 
               {/* Technical Implementation */}
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div className="group">
-                  <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-100/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                    <div className="flex items-center mb-8">
-                      <div className="p-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <Bot className="w-8 h-8 text-white" />
+                  <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-purple-100/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                    <div className="flex items-center mb-6 sm:mb-8">
+                      <div className="p-2 sm:p-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg sm:rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <Bot className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 ml-4">Technical Implementation</h3>
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 ml-3 sm:ml-4">Technical Implementation</h3>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       {[
                         { label: "Fine-tuned Mistral 7B Instruct v1 model", icon: CheckCircle },
                         { label: "MentalChat16K dataset (16,113 Q&A pairs)", icon: CheckCircle },
@@ -596,11 +599,11 @@ function HomePage({ setCurrentPage }) {
                         { label: "QLoRA fine-tuning techniques", icon: CheckCircle },
                         { label: "Advanced safety filtering mechanisms", icon: CheckCircle }
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-center space-x-4 p-3 bg-white/70 rounded-xl border border-purple-100/30 hover:bg-white/90 transition-all duration-300 group/item">
-                          <div className="p-1 bg-emerald-100 rounded-lg">
-                            <item.icon className="w-5 h-5 text-emerald-600" />
+                        <div key={idx} className="flex items-center space-x-3 sm:space-x-4 p-2 sm:p-3 bg-white/70 rounded-lg sm:rounded-xl border border-purple-100/30 hover:bg-white/90 transition-all duration-300 group/item">
+                          <div className="p-1 bg-emerald-100 rounded-lg flex-shrink-0">
+                            <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
                           </div>
-                          <span className="text-gray-700 font-medium group-hover/item:text-gray-900 transition-colors">{item.label}</span>
+                          <span className="text-gray-700 font-medium group-hover/item:text-gray-900 transition-colors text-xs sm:text-sm lg:text-base">{item.label}</span>
                         </div>
                       ))}
                     </div>
@@ -608,26 +611,26 @@ function HomePage({ setCurrentPage }) {
                 </div>
 
                 {/* Key Research Outcomes Card */}
-                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 group">
-                  <div className="flex items-center mb-6">
-                    <div className="p-2 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg">
-                      <Award className="w-6 h-6 text-white" />
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 group">
+                  <div className="flex items-center mb-4 sm:mb-6">
+                    <div className="p-2 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex-shrink-0">
+                      <Award className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
-                    <h4 className="font-bold text-gray-900 ml-3 text-xl">Key Research Outcomes</h4>
+                    <h4 className="font-bold text-gray-900 ml-3 text-lg sm:text-xl">Key Research Outcomes</h4>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="text-center bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border border-pink-100 shadow-md hover:shadow-lg transition-all duration-300 group/metric">
-                      <div className="text-4xl font-black text-pink-600 mb-2 group-hover/metric:scale-110 transition-transform duration-300">9/10</div>
-                      <div className="text-gray-600 font-semibold">Mental Health</div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="text-center bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-pink-100 shadow-md hover:shadow-lg transition-all duration-300 group/metric">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-pink-600 mb-2 group-hover/metric:scale-110 transition-transform duration-300">9/10</div>
+                      <div className="text-gray-600 font-semibold text-sm sm:text-base">Mental Health</div>
                       <div className="w-full bg-pink-100 rounded-full h-2 mt-3">
                         <div className="bg-gradient-to-r from-pink-500 to-rose-500 h-2 rounded-full" style={{ width: '90%' }}></div>
                       </div>
                     </div>
 
-                    <div className="text-center bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100 shadow-md hover:shadow-lg transition-all duration-300 group/metric">
-                      <div className="text-4xl font-black text-blue-600 mb-2 group-hover/metric:scale-110 transition-transform duration-300">6-7/10</div>
-                      <div className="text-gray-600 font-semibold">Medical Info</div>
+                    <div className="text-center bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-100 shadow-md hover:shadow-lg transition-all duration-300 group/metric">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-blue-600 mb-2 group-hover/metric:scale-110 transition-transform duration-300">6/10</div>
+                      <div className="text-gray-600 font-semibold text-sm sm:text-base">Medical Info</div>
                       <div className="w-full bg-blue-100 rounded-full h-2 mt-3">
                         <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full" style={{ width: '65%' }}></div>
                       </div>
@@ -637,29 +640,29 @@ function HomePage({ setCurrentPage }) {
               </div>
 
               {/* Key Findings */}
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div className="group">
-                  <div className="flex items-center mb-8">
-                    <div className="p-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <Star className="w-8 h-8 text-white" />
+                  <div className="flex items-center mb-6 sm:mb-8">
+                    <div className="p-2 sm:p-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg sm:rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      <Star className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 ml-4">Key Findings</h3>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 ml-3 sm:ml-4">Key Findings</h3>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-6">
                     {/* Mental Health Excellence */}
-                    <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-6 border border-emerald-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group/finding">
-                      <div className="flex items-center mb-4">
-                        <div className="p-2 bg-emerald-500 rounded-lg">
-                          <Heart className="w-5 h-5 text-white" />
+                    <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-emerald-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group/finding">
+                      <div className="flex items-center mb-3 sm:mb-4">
+                        <div className="p-2 bg-emerald-500 rounded-lg flex-shrink-0">
+                          <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
-                        <h4 className="font-bold text-emerald-800 ml-3 text-lg">Mental Health Excellence</h4>
+                        <h4 className="font-bold text-emerald-800 ml-3 text-base sm:text-lg">Mental Health Excellence</h4>
                       </div>
-                      <p className="text-emerald-700 leading-relaxed">
+                      <p className="text-emerald-700 leading-relaxed text-sm sm:text-base">
                         Consistently achieved 9/10 scores with empathetic responses, practical advice,
                         and appropriate crisis resource recommendations.
                       </p>
-                      <div className="mt-4 flex items-center space-x-2">
+                      <div className="mt-3 sm:mt-4 flex items-center space-x-2">
                         <div className="w-full bg-emerald-100 rounded-full h-2">
                           <div className="bg-gradient-to-r from-emerald-500 to-green-500 h-2 rounded-full" style={{ width: '90%' }}></div>
                         </div>
@@ -668,18 +671,18 @@ function HomePage({ setCurrentPage }) {
                     </div>
 
                     {/* Medical Information Quality */}
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group/finding">
-                      <div className="flex items-center mb-4">
-                        <div className="p-2 bg-blue-500 rounded-lg">
-                          <BookOpen className="w-5 h-5 text-white" />
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group/finding">
+                      <div className="flex items-center mb-3 sm:mb-4">
+                        <div className="p-2 bg-blue-500 rounded-lg flex-shrink-0">
+                          <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
-                        <h4 className="font-bold text-blue-800 ml-3 text-lg">Medical Information Quality</h4>
+                        <h4 className="font-bold text-blue-800 ml-3 text-base sm:text-lg">Medical Information Quality</h4>
                       </div>
-                      <p className="text-blue-700 leading-relaxed">
+                      <p className="text-blue-700 leading-relaxed text-sm sm:text-base">
                         Achieved 6-7/10 average with 30% of responses showing high accuracy,
                         though consistency remains an area for improvement.
                       </p>
-                      <div className="mt-4 flex items-center space-x-2">
+                      <div className="mt-3 sm:mt-4 flex items-center space-x-2">
                         <div className="w-full bg-blue-100 rounded-full h-2">
                           <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full" style={{ width: '65%' }}></div>
                         </div>
@@ -688,18 +691,18 @@ function HomePage({ setCurrentPage }) {
                     </div>
 
                     {/* Safety Measures */}
-                    <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group/finding">
-                      <div className="flex items-center mb-4">
-                        <div className="p-2 bg-purple-500 rounded-lg">
-                          <Lock className="w-5 h-5 text-white" />
+                    <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-purple-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group/finding">
+                      <div className="flex items-center mb-3 sm:mb-4">
+                        <div className="p-2 bg-purple-500 rounded-lg flex-shrink-0">
+                          <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
-                        <h4 className="font-bold text-purple-800 ml-3 text-lg">Safety Measures</h4>
+                        <h4 className="font-bold text-purple-800 ml-3 text-base sm:text-lg">Safety Measures</h4>
                       </div>
-                      <p className="text-purple-700 leading-relaxed">
+                      <p className="text-purple-700 leading-relaxed text-sm sm:text-base">
                         Integrated ethical guidelines and safety protocols ensure responsible
                         AI assistance for sensitive health-related queries.
                       </p>
-                      <div className="mt-4 flex items-center space-x-2">
+                      <div className="mt-3 sm:mt-4 flex items-center space-x-2">
                         <div className="w-full bg-purple-100 rounded-full h-2">
                           <div className="bg-gradient-to-r from-purple-500 to-indigo-500 h-2 rounded-full" style={{ width: '95%' }}></div>
                         </div>
@@ -712,33 +715,33 @@ function HomePage({ setCurrentPage }) {
             </div>
 
             {/* Bottom Impact Statement */}
-            <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
+            <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-12 text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
               <div className="relative z-10">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="p-3 bg-white/10 rounded-xl backdrop-blur-sm">
-                    <Target className="w-8 h-8 text-white" />
+                <div className="flex items-center justify-center mb-4 sm:mb-6">
+                  <div className="p-2 sm:p-3 bg-white/10 rounded-lg sm:rounded-xl backdrop-blur-sm">
+                    <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">Research Impact</h3>
-                <p className="text-blue-100 text-lg max-w-4xl mx-auto leading-relaxed">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">Research Impact</h3>
+                <p className="text-blue-100 text-sm sm:text-base lg:text-lg max-w-4xl mx-auto leading-relaxed px-2">
                   This research contributes to the growing field of AI-powered healthcare support, demonstrating the potential for
                   technology to bridge gaps in mental health services while maintaining the highest standards of safety and ethics.
                 </p>
-                <div className="flex items-center justify-center space-x-8 mt-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-8 mt-6 sm:mt-8">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">60K+</div>
-                    <div className="text-blue-200 text-sm">Training Examples</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white">60K+</div>
+                    <div className="text-blue-200 text-xs sm:text-sm">Training Examples</div>
                   </div>
-                  <div className="w-px h-12 bg-white/20"></div>
+                  <div className="hidden sm:block w-px h-12 bg-white/20"></div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">2</div>
-                    <div className="text-blue-200 text-sm">Specialized Domains</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white">2</div>
+                    <div className="text-blue-200 text-xs sm:text-sm">Specialized Domains</div>
                   </div>
-                  <div className="w-px h-12 bg-white/20"></div>
+                  <div className="hidden sm:block w-px h-12 bg-white/20"></div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">98%</div>
-                    <div className="text-blue-200 text-sm">Safety Score</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white">98%</div>
+                    <div className="text-blue-200 text-xs sm:text-sm">Safety Score</div>
                   </div>
                 </div>
               </div>
@@ -747,6 +750,7 @@ function HomePage({ setCurrentPage }) {
         </div>
       </div>
     </div>
+
 
       {/* Enhanced Footer */}
       <footer className="bg-gray-900 text-white py-16">
