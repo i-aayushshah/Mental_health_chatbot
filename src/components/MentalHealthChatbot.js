@@ -14,8 +14,8 @@ function MentalHealthChatbot() {
       examples={[
         "I'm feeling anxious and can't sleep",
         "I'm struggling with depression lately",
-        "How can I manage stress at work?",
-        "I feel overwhelmed and need support"
+        "I keep having panic attacks and don’t know how to make them stop. What should I do?",
+        "I feel like life isn't worth living anymore"
       ]}
       features={[
         "Empathetic and supportive responses",
