@@ -164,10 +164,10 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
-          {/* Enhanced Chat Interface */}
+          {/*  Chat Interface */}
           <div className="xl:col-span-2">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden">
-              {/* Enhanced Connection Setup */}
+              {/*  Connection Setup */}
               {!isConnected && (
                 <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-b border-amber-200/50 p-6">
                   <div className="flex items-center space-x-3 mb-4">
@@ -208,7 +208,7 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
                 </div>
               )}
 
-              {/* Enhanced Connection Status */}
+              {/*  Connection Status */}
               {isConnected && (
                 <div className="bg-gradient-to-r from-emerald-50 to-green-50 border-b border-emerald-200/50 p-4">
                   <div className="flex items-center justify-between">
@@ -236,7 +236,7 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
                 </div>
               )}
 
-              {/* Enhanced Chat Messages */}
+              {/*  Chat Messages */}
               <div className="h-[500px] lg:h-[600px] overflow-y-auto p-6 bg-gradient-to-b from-gray-50/50 to-white/50">
                 {messages.length === 0 && isConnected && (
                   <div className="text-center py-12 lg:py-16">
@@ -277,7 +277,7 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
                         ? 'bg-gradient-to-r from-red-100 to-rose-100 text-red-800 border border-red-200 rounded-2xl'
                         : 'bg-white border border-gray-200 shadow-lg rounded-2xl rounded-bl-md'
                     } p-4 lg:p-5`}>
-                      {/* Enhanced Message Header */}
+                      {/*  Message Header */}
                       <div className="flex items-center space-x-2 mb-3">
                         <div className={`p-1.5 rounded-lg ${
                           message.role === 'user'
@@ -299,12 +299,12 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
                         <span className="text-xs font-medium opacity-75">{message.timestamp}</span>
                       </div>
 
-                      {/* Enhanced Message Content */}
+                      {/*  Message Content */}
                       <div className="whitespace-pre-wrap leading-relaxed text-sm lg:text-base">
                         {message.content}
                       </div>
 
-                      {/* Enhanced Bot Message Metadata */}
+                      {/*  Bot Message Metadata */}
                       {message.role === 'bot' && message.domain && (
                         <div className="mt-4 pt-3 border-t border-gray-200/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-gray-600">
                           <div className="flex items-center space-x-3">
@@ -330,7 +330,7 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
                   </div>
                 ))}
 
-                {/* Enhanced Loading Indicator */}
+                {/*  Loading Indicator */}
                 {isLoading && (
                   <div className="flex justify-start mb-6">
                     <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-md p-5 flex items-center space-x-4 shadow-lg">
@@ -348,7 +348,7 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Enhanced Input Form */}
+              {/*  Input Form */}
               <div className="p-6 bg-white/90 backdrop-blur-sm border-t border-gray-200/50">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input
@@ -385,9 +385,9 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
             </div>
           </div>
 
-          {/* Enhanced Sidebar */}
+          {/*  Sidebar */}
           <div className="space-y-6">
-            {/* Enhanced Example Questions */}
+            {/*  Example Questions */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6">
               <div className="flex items-center space-x-2 mb-5">
                 <div className={`p-2 ${colors.secondary} rounded-lg`}>
@@ -411,7 +411,7 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
               </div>
             </div>
 
-            {/* Enhanced Features */}
+            {/*  Features */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6">
               <div className="flex items-center space-x-2 mb-5">
                 <div className={`p-2 ${colors.secondary} rounded-lg`}>
@@ -431,7 +431,7 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
               </div>
             </div>
 
-            {/* Enhanced Performance */}
+            {/*  Performance */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6">
               <div className="flex items-center space-x-2 mb-5">
                 <div className={`p-2 ${colors.secondary} rounded-lg`}>

@@ -91,7 +91,7 @@ function HomePage({ setCurrentPage }) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Enhanced Hero Section */}
+      {/* Hero Section */}
       <div className="relative overflow-hidden min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
         {/* Advanced Background Effects */}
         <div className="absolute inset-0">
@@ -181,7 +181,7 @@ function HomePage({ setCurrentPage }) {
               </div>
             </div>
 
-            {/* Enhanced Hero Visual */}
+            {/*  Hero Visual */}
             <div className="lg:col-span-5 relative animate-fade-in-up" style={{ animationDelay: '1s' }}>
               <div className="relative max-w-lg mx-auto lg:max-w-none">
                 {/* Outer glow effects */}
@@ -330,7 +330,7 @@ function HomePage({ setCurrentPage }) {
         </div>
       </div>
 
-      {/* Enhanced Case Studies Section */}
+      {/*  Case Studies Section */}
       <div className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -360,7 +360,7 @@ function HomePage({ setCurrentPage }) {
                   <div className="grid grid-cols-3 gap-6 mb-8">
                     {Object.entries(study.metrics).map(([key, value]) => (
                       <div key={key} className="text-center bg-gray-50 rounded-2xl p-4">
-                        <div className="text-2xl font-bold text-gray-900">{value}</div>
+                        <div className="text-l font-bold text-gray-900">{value}</div>
                         <div className="text-sm text-gray-500 capitalize font-medium">{key}</div>
                       </div>
                     ))}
@@ -381,7 +381,7 @@ function HomePage({ setCurrentPage }) {
         </div>
       </div>
 
-      {/* Enhanced Performance Overview */}
+      {/* Performance Overview */}
       <div className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -752,7 +752,7 @@ function HomePage({ setCurrentPage }) {
     </div>
 
 
-      {/* Enhanced Footer */}
+      {/*  Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
