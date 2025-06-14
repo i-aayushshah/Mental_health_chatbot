@@ -14,7 +14,7 @@ function MedicalChatbot() {
       examples={[
         "What are the symptoms of diabetes?",
         "What causes migraines?",
-        "How is hypertension treated?",
+        "How is high blood pressure treated?",
         "What are the side effects of aspirin?"
       ]}
       features={[
