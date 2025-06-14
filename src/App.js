@@ -38,7 +38,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40" style={{ fontFamily: 'Century Schoolbook' }}>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40" style={{ fontFamily: 'Georgia' }}>
       {/* Navigation Header */}
       <nav className="bg-white/95 backdrop-blur-lg shadow-xl border-b border-gray-100/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
