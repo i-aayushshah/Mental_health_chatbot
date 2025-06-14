@@ -1,21 +1,108 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Send, Bot, User, AlertTriangle, Loader2, CheckCircle, Settings, Wifi, WifiOff } from 'lucide-react';
+import { Send, Bot, User, AlertTriangle, Loader2, CheckCircle, Settings, Wifi, WifiOff, X, AlertCircle } from 'lucide-react';
 
+// Toast Component
+function Toast({ toast, onClose }) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onClose(toast.id);
+    }, toast.duration || 5000);
+
+    return () => clearTimeout(timer);
+  }, [toast.id, toast.duration, onClose]);
+
+  const getToastStyles = () => {
+    switch (toast.type) {
+      case 'success':
+        return 'bg-green-50 border-green-200 text-green-800';
+      case 'error':
+        return 'bg-red-50 border-red-200 text-red-800';
+      case 'warning':
+        return 'bg-yellow-50 border-yellow-200 text-yellow-800';
+      default:
+        return 'bg-blue-50 border-blue-200 text-blue-800';
+    }
+  };
+
+  const getIcon = () => {
+    switch (toast.type) {
+      case 'success':
+        return <CheckCircle className="w-5 h-5 text-green-600" />;
+      case 'error':
+        return <AlertCircle className="w-5 h-5 text-red-600" />;
+      case 'warning':
+        return <AlertTriangle className="w-5 h-5 text-yellow-600" />;
+      default:
+        return <AlertCircle className="w-5 h-5 text-blue-600" />;
+    }
+  };
+
+  return (
+    <div className={`${getToastStyles()} border rounded-lg p-4 shadow-lg backdrop-blur-sm animate-in slide-in-from-right-full duration-300`}>
+      <div className="flex items-start space-x-3">
+        <div className="flex-shrink-0">
+          {getIcon()}
+        </div>
+        <div className="flex-1 min-w-0">
+          {toast.title && (
+            <h4 className="font-semibold text-sm mb-1">{toast.title}</h4>
+          )}
+          <p className="text-sm leading-relaxed">{toast.message}</p>
+        </div>
+        <button
+          onClick={() => onClose(toast.id)}
+          className="flex-shrink-0 ml-2 p-1 rounded-md hover:bg-black/10 transition-colors"
+        >
+          <X className="w-4 h-4" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// Toast Container Component
+function ToastContainer({ toasts, onClose }) {
+  return (
+    <div className="fixed top-24 sm:top-24 right-2 sm:right-4 z-[999999] space-y-2 sm:space-y-3 w-[calc(100vw-1rem)] sm:w-96 max-w-sm pointer-events-none">
+      {toasts.map((toast) => (
+        <div key={toast.id} className="pointer-events-auto">
+          <Toast toast={toast} onClose={onClose} />
+        </div>
+      ))}
+    </div>
+  );
+}
 function ChatbotInterface({ title, description, icon: Icon, iconColor, accentColor, domain, examples, features, performance }) {
   const [query, setQuery] = useState('');
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [apiEndpoint, setApiEndpoint] = useState('');
   const [isConnected, setIsConnected] = useState(false);
+  const [toasts, setToasts] = useState([]);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // Toast management functions
+  const addToast = (toast) => {
+    const id = Date.now() + Math.random();
+    setToasts(prev => [...prev, { ...toast, id }]);
+  };
+
+  const removeToast = (id) => {
+    setToasts(prev => prev.filter(toast => toast.id !== id));
+  };
+
   const testConnection = async () => {
     if (!apiEndpoint.trim()) {
-      alert('Please enter your API endpoint URL');
+      addToast({
+        type: 'warning',
+        title: 'Missing Endpoint',
+        message: 'Please enter your API endpoint URL to connect.',
+        duration: 4000
+      });
       return;
     }
 
@@ -38,12 +125,24 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
           content: `✅ Connected to ${title.toLowerCase()} successfully! Status: ${data.status}. You can now start asking questions.`,
           timestamp: new Date().toLocaleTimeString(),
         }]);
+
+        addToast({
+          type: 'success',
+          title: 'Connection Successful',
+          message: `Successfully connected to ${title.toLowerCase()}!`,
+          duration: 3000
+        });
       } else {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
     } catch (error) {
       console.error('Connection error:', error);
-      alert(`Failed to connect: ${error.message}. Please check your endpoint URL.`);
+      addToast({
+        type: 'error',
+        title: 'Connection Failed',
+        message: `Failed to connect: ${error.message}. Please check your endpoint URL.`,
+        duration: 6000
+      });
       setIsConnected(false);
     } finally {
       setIsLoading(false);
@@ -103,6 +202,13 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
         isError: true,
       };
       setMessages((prev) => [...prev, errorMessage]);
+
+      addToast({
+        type: 'error',
+        title: 'Message Failed',
+        message: `Error sending message: ${error.message}`,
+        duration: 5000
+      });
     } finally {
       setIsLoading(false);
       setQuery('');
@@ -119,6 +225,13 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
   const handleExampleClick = (example) => {
     if (isConnected && !isLoading) {
       setQuery(example);
+    } else if (!isConnected) {
+      addToast({
+        type: 'warning',
+        title: 'Not Connected',
+        message: 'Please connect to your chatbot first before trying examples.',
+        duration: 4000
+      });
     }
   };
 
@@ -147,6 +260,9 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30">
+      {/* Toast Container */}
+      <ToastContainer toasts={toasts} onClose={removeToast} />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
         {/* Enhanced Header */}
         <div className="text-center mb-8 lg:mb-12">
@@ -226,6 +342,12 @@ function ChatbotInterface({ title, description, icon: Icon, iconColor, accentCol
                       onClick={() => {
                         setIsConnected(false);
                         setMessages([]);
+                        addToast({
+                          type: 'info',
+                          title: 'Disconnected',
+                          message: 'You have been disconnected from the chatbot.',
+                          duration: 3000
+                        });
                       }}
                       className="flex items-center space-x-1 text-emerald-600 hover:text-emerald-800 text-sm font-medium transition-colors"
                     >
